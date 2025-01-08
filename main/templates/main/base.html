@@ -87,13 +87,13 @@
                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Усі товари</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Кухня</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Спальня</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Вітальня</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Офіс</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Фурнітура</a></li>
-                        <li><a class="dropdown-item text-white" href="{% static 'goods/catalog.html' %}">Декор</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Усі товари</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Кухня</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Спальня</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Вітальня</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Офіс</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Фурнітура</a></li>
+                        <li><a class="dropdown-item text-white" href="{% url 'catalogue:index' %}">Декор</a></li>
                     </ul>
                 </div>
                 <!-- Значок кошика, викликає модальне вікно -->

@@ -1,0 +1,329 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <!-- Форма фільтрів -->
+        <div class="dropdown mb-2">
+            <button class="btn btn-secondary dropdown-toggle btn-dark" type="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Фільтри
+            </button>
+
+            <form action="" method="get" class="dropdown-menu bg-dark" data-bs-theme="dark">
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="checkbox" name="on_sale" id="flexCheckDefault" value="on">
+                    <input type="hidden" name="q" value="request.GET.q">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Товари зі знижкою
+                    </label>
+                </div>
+                <p class="text-white mx-3 mt-3">Сортувати:</p>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault1" value="default" checked>
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        За замовчуванням
+                    </label>
+                </div>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault2" value="price">
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        Від дешевих до дорогих
+                    </label>
+                </div>
+                <div class="form-check text-white mx-3">
+                    <input class="form-check-input" type="radio" name="order_by" id="flexRadioDefault3" value="-price">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        Від дорогих до дешевих
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-primary mx-3 mt-3">Застосувати</button>
+            </form>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/set of tea table and three chairs.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="../goods/product.html">
+                        <p class="card-title">Чайний столик і три стільці</p>
+                    </a>
+                    <p class="card-text text-truncate">Комплект з трьох стільців і дизайнерський столик для вітальні.</p>
+                    <p class="product_id">id: 02265</p>
+                    <div class="d-flex justify-content-between">
+                        <p><s>100</s> $</p>
+                        <p><strong>90.00 $</strong></p>
+                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                        <a href="#" class="btn add-to-cart">
+                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/set of tea table and two chairs.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="#">
+                        <p class="card-title">Чайний столик і два стільці</p>
+                    </a>
+                    <p class="card-text text-truncate">Набір зі столу та двох стільців у мінімалістичному стилі.</p>
+                    <p class="product_id">id: 02265</p>
+                    <div class="d-flex justify-content-between">
+                        <p><s>100</s> $</p>
+                        <p><strong>90.00 $</strong></p>
+                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                        <a href="#" class="btn add-to-cart">
+                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/double bed.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="#">
+                        <p class="card-title">Двоспальне ліжко</p>
+                    </a>
+                    <p class="card-text text-truncate">Ліжко двоспальне з узголів'ям і дуже ортопедичне.</p>
+                    <p class="product_id">id: 02265</p>
+                    <div class="d-flex justify-content-between">
+                        <p><s>100</s> $</p>
+                        <p><strong>90.00 $</strong></p>
+                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                        <a href="#" class="btn">
+                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/kitchen table.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="#">
+                        <p class="card-title">Кухонний стіл із мийкою</p>
+                    </a>
+                    <p class="card-text text-truncate">Кухонний стіл для обіду з вбудованою мийкою та стільцями.</p>
+                    <p class="product_id">id: 02265</p>
+                    <div class="d-flex justify-content-between">
+                        <p><s>100</s> $</p>
+                        <p><strong>90.00 $</strong></p>
+                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                        <a href="#" class="btn">
+                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/kitchen table 2.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="#">
+                        <p class="card-title">Кухонний стіл із вбудованою плитою</p>
+                    </a>
+                    <p class="card-text text-truncate">Кухонний стіл зі вбудованою плитою та мийкою. Багато полиць і дуже гарний.</p>
+                    <p class="product_id">id: 02265</p>
+                    <div class="d-flex justify-content-between">
+                        <p><s>100</s> $</p>
+                        <p><strong>90.00 $</strong></p>
+                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                        <a href="#" class="btn">
+                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon" width="32" height="32">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Карта товару -->
+        <div class="col-lg-4 col-md-6 p-4">
+            <div class="card border-primary rounded custom-shadow">
+                <img src="../deps/images/goods/corner sofa.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <a href="#">
+                        <p class="card-title">Кутовий диван для вітальні</p>
+                                                        </a>
+                                    <p class="card-text text-truncate">Кутовий диван, розкладається в двоспальне ліжко, ідеально підходить для вітальні та прийому гостей!</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товару -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/bedside table.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Приліжковий столик</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Приліжковий столик із двома висувними ящиками (квітка не входить у комплект).</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товару -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/sofa.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Звичайний диван</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Диван, він же звичайна софа, нічого особливого для опису.</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товару -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/office chair.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Офісний стілець</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Опис товару про те, який він класний, але це стілець, що тут додати...</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товару -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/plants.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Рослина</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Рослина для прикраси вашого інтер’єру подарує свіжість і спокій.</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товару -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/flower.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Квітка стилізована</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Дизайнерська квітка (можливо штучна) для декору.</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Карта товара -->
+                        <div class="col-lg-4 col-md-6 p-4">
+                            <div class="card border-primary rounded custom-shadow">
+                                <img src="../deps/images/goods/strange table.jpg" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <a href="#">
+                                        <p class="card-title">Приліжковий столик</p>
+                                    </a>
+                                    <p class="card-text text-truncate">Столик, досить дивний на вигляд, але підходить для розміщення поруч із ліжком.</p>
+                                    <p class="product_id">id: 02265</p>
+                                    <div class="d-flex justify-content-between">
+                                        <p><s>100</s> $</p>
+                                        <p><strong>90.00 $</strong></p>
+                                        <span class="badge bg-warning text-dark">Знижка 10.00 %</span>
+                                        <!-- <p><strong>100.00 $</strong></p> -->
+                                        <a href="#" class="btn">
+                                            <img class="mx-1" src="../deps/icons/cart-plus.svg" alt="Catalog Icon"
+                                                width="32" height="32">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center my-4">
+                            <div class="custom-shadow d-flex">
+                                <li class="page-item disabled">
+                                  <a class="page-link">Previous</a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                  <a class="page-link" href="#">Next</a>
+                                </li>
+                            </div>
+                        </ul>
+                    </nav>
+{% endblock %}
+
+{% block footer %}
+    <footer class="py-4 bg-dark">
+        <div class="container">
+            <p class="m-0 text-center text-white">Copyright &copy; Home Python Hub Studio 2023</p>
+        </div>
+    </footer>
+{% endblock %}
+
