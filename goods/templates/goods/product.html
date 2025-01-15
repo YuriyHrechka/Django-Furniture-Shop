@@ -7,11 +7,11 @@
                             <div class="row">
                                 <!-- Мініатюри -->
                                 <div class="col-md-4">
-                                    <img src="../deps/images/goods/set of tea table and three chairs.jpg"
+                                    <img src="{{ product.image.url }}"
                                         class="img-thumbnail" data-bs-toggle="modal" data-bs-target="#imageModal1">
                                 </div>
                                 <div class="col-md-4 ">
-                                    <p class="product_id mt-3">id: 002654</p>
+                                    <p class="product_id mt-3">id: {{ product.display_id }}</p>
                                 </div>
                                 <!-- Збільшити зображення в модальному вікні -->
                                 <div class="modal fade" id="imageModal1" tabindex="-1"
@@ -19,12 +19,12 @@
                                     <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h5 class="modal-title" id="imageModal1Label">Зображення 1</h5>
+                                                <h5 class="modal-title" id="imageModal1Label">{{ product.name }}</h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Закрити"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <img src="../deps/images/goods/set of tea table and three chairs.jpg"
+                                                <img src="{{ product.image.url }}"
                                                     class="img-fluid" alt="Зображення 1">
                                             </div>
                                         </div>
@@ -33,10 +33,9 @@
                             </div>
                             <!-- Опис товару -->
                             <div class="card-body">
-                                <p class="card-text">Ціна: <strong>150.00 $</strong></p>
-                                <h5 class="card-title">Чайний столик і три стільці</h5>
-                                <p class="card-text">Комплект з трьох стільців і дизайнерський столик для вітальні
-                                    кімнати.</p>
+                                <p class="card-text">Ціна: <strong>{{ product.sell_price }} $</strong></p>
+                                <h5 class="card-title">{{ product.name }}</h5>
+                                <p class="card-text">{{ product.description }}</p>
                                 <a href="#" class="btn btn-dark add-to-cart">Додати до кошика</a>
                             </div>
                         </div>
