@@ -67,8 +67,8 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Пошук" aria-label="Search">
+                    <form class="d-flex" role="search" action="{% url 'catalogue:search' %}" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Пошук" aria-label="Search">
                         <button class="btn btn-outline-success text-white" type="submit">Пошук</button>
                     </form>
                 </div>
@@ -86,7 +86,7 @@
                         Каталог
                         <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16"
                             height="16">
-                    </button>
+                    </button>b
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
                         {% tag_categories as categories %}
                         {% for category in categories %}
