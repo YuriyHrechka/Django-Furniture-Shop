@@ -5,7 +5,7 @@ from goods.utils import q_search
 
 
 def catalogue(request, category_slug=None):
-    page = request.GET.get('page', 1)
+    page = request.GET.get('page', '1')
     on_sale = request.GET.get('on_sale', None)
     order_by = request.GET.get('order_by', None)
     query = request.GET.get('q', None)
@@ -24,7 +24,10 @@ def catalogue(request, category_slug=None):
         goods = goods.order_by(order_by)
 
     paginator = Paginator(goods, 3)
-    current_page = paginator.page(int(page))
+    try:
+        current_page = paginator.page(int(page))
+    except ValueError:
+        current_page = paginator.page(1)
 
     context: dict[str, str] = {
         'title': 'Home - Каталог',

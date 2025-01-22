@@ -1,4 +1,10 @@
 from django.db.models import Q
+from django.contrib.postgres.search import (
+    SearchVector,
+    SearchQuery,
+    SearchRank,
+    SearchHeadline,
+)
 from goods.models import Products
 
 
@@ -13,5 +19,25 @@ def q_search(query):
         q_objects |= Q(description__icontains=token)
         q_objects |= Q(name__icontains=token)
 
-    return Products.objects.filter(q_objects)
+    result = Products.objects.filter(q_objects).distinct()
+
+    result = result.annotate(
+        headline=SearchHeadline(
+            "name",
+            query,
+            start_sel='<span style="background-color:yellow;">',
+            stop_sel='</span>',
+        )
+    )
+
+    result = result.annotate(
+        bodyline=SearchHeadline(
+            "description",
+            query,
+            start_sel='<span style="background-color:yellow;">',
+            stop_sel='</span>',
+        )
+    )
+
+    return result
 
