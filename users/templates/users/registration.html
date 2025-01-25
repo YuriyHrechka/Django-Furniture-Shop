@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+	<div class="row">
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-9 bg-white p-4 mb-5 mx-2 rounded custom-shadow">
+                    <h2 class="text-center mb-4">Реєстрація</h2>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="firstName" class="form-label">Ім'я*</label>
+                                <input type="text" class="form-control" id="firstName"
+                                    placeholder="Введіть ваше ім'я" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="lastName" class="form-label">Прізвище*</label>
+                                <input type="text" class="form-control" id="lastName"
+                                    placeholder="Введіть ваше прізвище" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="username" class="form-label">Ім'я користувача*</label>
+                                <input type="text" class="form-control" id="username"
+                                    placeholder="Введіть ваше ім'я користувача" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Email*</label>
+                                <input type="email" class="form-control" id="email"
+                                    placeholder="Введіть ваш email" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="password1" class="form-label">Пароль*</label>
+                                <input type="password" class="form-control" id="password1"
+                                    placeholder="Введіть пароль" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="password2" class="form-label">Підтвердження пароля*</label>
+                                <input type="password" class="form-control" id="password2"
+                                    placeholder="Підтвердіть пароль" required>
+                            </div>
+                        </div>
+                        <button type="submit"
+                            class="btn btn-dark btn-block">Зареєструватися</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

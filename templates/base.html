@@ -49,7 +49,7 @@
                             <a class="nav-link text-white" href="{% static 'carts/cart.html' %}">Кошик</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% static 'users/login.html' %}">Увійти</a>
+                            <a class="nav-link text-white" href="{% url 'user:login' %}">Увійти</a>
                         </li>
                         <li class="nav-item dropdown ">
                             <a class="nav-link dropdown-toggle text-white" href="#" role="button"
@@ -58,12 +58,12 @@
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item text-white" href="{% static 'carts/cart.html' %}">Кошик</a></li>
-                                <li><a class="dropdown-item text-white" href="{% static 'users/profile.html' %}">Особистий кабінет</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'user:profile' %}">Особистий кабінет</a></li>
                                 <li><a class="dropdown-item text-white" href="{% url "admin:index" %}">Адмін панель</a></li>
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item text-white" href="#">Вийти</a></li>
+                                <li><a class="dropdown-item text-white" href="{% url 'user:logout' %}">Вийти</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -85,7 +85,7 @@
                         aria-expanded="false">
                         Каталог
                         <img class="mx-1" src="{% static 'deps/icons/grid-fill.svg' %}" alt="Catalog Icon" width="16"
-                            height="16">
+                             height="16">
                     </button>
                     <ul class="dropdown-menu bg-dark" data-bs-theme="dark">
                         {% tag_categories as categories %}
@@ -99,7 +99,7 @@
                     <button type="button" class="btn btn-dark btn-secondary d-flex" id="modalButton"
                         aria-expanded="false">
                          <img class="mx-1" src="{% static 'deps/icons/basket2-fill.svg' %}" alt="Catalog Icon" width="24"
-                            height="24">
+                              height="24">
                         <span id="goods-in-cart-count">0</span>
                     </button>
                 </div>
