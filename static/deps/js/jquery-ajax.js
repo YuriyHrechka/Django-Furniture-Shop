@@ -1,24 +1,24 @@
-// Когда html документ готов (прорисован)
+// Коли html документ готовий (промальований)
 $(document).ready(function () {
-    // берем в переменную элемент разметки с id jq-notification для оповещений от ajax
+    // беремо в змінну елемент розмітки з id jq-notification для сповіщень від ajax
     var successMessage = $("#jq-notification");
 
-    // // Ловим собыитие клика по кнопке добавить в корзину
+    // // Ловимо подію кліку по кнопці додати до кошика
     // $(document).on("click", ".add-to-cart", function (e) {
-    //     // Блокируем его базовое действие
+    //     // Блокуємо його базову дію
     //     e.preventDefault();
 
-    //     // Берем элемент счетчика в значке корзины и берем оттуда значение
+    //     // Беремо елемент лічильника в значку кошика і беремо звідти значення
     //     var goodsInCartCount = $("#goods-in-cart-count");
     //     var cartCount = parseInt(goodsInCartCount.text() || 0);
 
-    //     // Получаем id товара из атрибута data-product-id
+    //     // Отримуємо id товару з атрибута data-product-id
     //     var product_id = $(this).data("product-id");
 
-    //     // Из атрибута href берем ссылку на контроллер django
+    //     // З атрибута href беремо посилання на контролер django
     //     var add_to_cart_url = $(this).attr("href");
 
-    //     // делаем post запрос через ajax не перезагружая страницу
+    //     // робимо post-запит через ajax без перезавантаження сторінки
     //     $.ajax({
     //         type: "POST",
     //         url: add_to_cart_url,
@@ -27,26 +27,26 @@ $(document).ready(function () {
     //             csrfmiddlewaretoken: $("[name=csrfmiddlewaretoken]").val(),
     //         },
     //         success: function (data) {
-    //             // Сообщение
+    //             // Повідомлення
     //             successMessage.html(data.message);
     //             successMessage.fadeIn(400);
-    //             // Через 7сек убираем сообщение
+    //             // Через 7 сек прибираємо повідомлення
     //             setTimeout(function () {
     //                 successMessage.fadeOut(400);
     //             }, 7000);
 
-    //             // Увеличиваем количество товаров в корзине (отрисовка в шаблоне)
+    //             // Збільшуємо кількість товарів у кошику (промальовка у шаблоні)
     //             cartCount++;
     //             goodsInCartCount.text(cartCount);
 
-    //             // Меняем содержимое корзины на ответ от django (новый отрисованный фрагмент разметки корзины)
+    //             // Змінюємо вміст кошика на відповідь від django (новий промальований фрагмент розмітки кошика)
     //             var cartItemsContainer = $("#cart-items-container");
     //             cartItemsContainer.html(data.cart_items_html);
 
     //         },
 
     //         error: function (data) {
-    //             console.log("Ошибка при добавлении товара в корзину");
+    //             console.log("Помилка при додаванні товару до кошика");
     //         },
     //     });
     // });
@@ -54,21 +54,21 @@ $(document).ready(function () {
 
 
 
-    // // Ловим собыитие клика по кнопке удалить товар из корзины
+    // // Ловимо подію кліку по кнопці видалити товар із кошика
     // $(document).on("click", ".remove-from-cart", function (e) {
-    //     // Блокируем его базовое действие
+    //     // Блокуємо його базову дію
     //     e.preventDefault();
 
-    //     // Берем элемент счетчика в значке корзины и берем оттуда значение
+    //     // Беремо елемент лічильника в значку кошика і беремо звідти значення
     //     var goodsInCartCount = $("#goods-in-cart-count");
     //     var cartCount = parseInt(goodsInCartCount.text() || 0);
 
-    //     // Получаем id корзины из атрибута data-cart-id
+    //     // Отримуємо id кошика з атрибута data-cart-id
     //     var cart_id = $(this).data("cart-id");
-    //     // Из атрибута href берем ссылку на контроллер django
+    //     // З атрибута href беремо посилання на контролер django
     //     var remove_from_cart = $(this).attr("href");
-    
-    //     // делаем post запрос через ajax не перезагружая страницу
+
+    //     // робимо post-запит через ajax без перезавантаження сторінки
     //     $.ajax({
 
     //         type: "POST",
@@ -78,26 +78,26 @@ $(document).ready(function () {
     //             csrfmiddlewaretoken: $("[name=csrfmiddlewaretoken]").val(),
     //         },
     //         success: function (data) {
-    //             // Сообщение
+    //             // Повідомлення
     //             successMessage.html(data.message);
     //             successMessage.fadeIn(400);
-    //             // Через 7сек убираем сообщение
+    //             // Через 7 сек прибираємо повідомлення
     //             setTimeout(function () {
     //                 successMessage.fadeOut(400);
     //             }, 7000);
 
-    //             // Уменьшаем количество товаров в корзине (отрисовка)
+    //             // Зменшуємо кількість товарів у кошику (промальовка)
     //             cartCount -= data.quantity_deleted;
     //             goodsInCartCount.text(cartCount);
 
-    //             // Меняем содержимое корзины на ответ от django (новый отрисованный фрагмент разметки корзины)
+    //             // Змінюємо вміст кошика на відповідь від django (новий промальований фрагмент розмітки кошика)
     //             var cartItemsContainer = $("#cart-items-container");
     //             cartItemsContainer.html(data.cart_items_html);
 
     //         },
 
     //         error: function (data) {
-    //             console.log("Ошибка при добавлении товара в корзину");
+    //             console.log("Помилка при додаванні товару до кошика");
     //         },
     //     });
     // });
@@ -105,41 +105,41 @@ $(document).ready(function () {
 
 
 
-    // // Теперь + - количества товара 
-    // // Обработчик события для уменьшения значения
+    // // Тепер + - кількості товару
+    // // Обробник події для зменшення значення
     // $(document).on("click", ".decrement", function () {
-    //     // Берем ссылку на контроллер django из атрибута data-cart-change-url
+    //     // Беремо посилання на контролер django з атрибута data-cart-change-url
     //     var url = $(this).data("cart-change-url");
-    //     // Берем id корзины из атрибута data-cart-id
+    //     // Беремо id кошика з атрибута data-cart-id
     //     var cartID = $(this).data("cart-id");
-    //     // Ищем ближайшеий input с количеством 
+    //     // Шукаємо найближчий input із кількістю
     //     var $input = $(this).closest('.input-group').find('.number');
-    //     // Берем значение количества товара
+    //     // Беремо значення кількості товару
     //     var currentValue = parseInt($input.val());
-    //     // Если количества больше одного, то только тогда делаем -1
+    //     // Якщо кількість більше одного, то лише тоді робимо -1
     //     if (currentValue > 1) {
     //         $input.val(currentValue - 1);
-    //         // Запускаем функцию определенную ниже
-    //         // с аргументами (id карты, новое количество, количество уменьшилось или прибавилось, url)
+    //         // Запускаємо функцію визначену нижче
+    //         // із аргументами (id кошика, нова кількість, кількість зменшилась або збільшилась, url)
     //         updateCart(cartID, currentValue - 1, -1, url);
     //     }
     // });
 
-    // // Обработчик события для увеличения значения
+    // // Обробник події для збільшення значення
     // $(document).on("click", ".increment", function () {
-    //     // Берем ссылку на контроллер django из атрибута data-cart-change-url
+    //     // Беремо посилання на контролер django з атрибута data-cart-change-url
     //     var url = $(this).data("cart-change-url");
-    //     // Берем id корзины из атрибута data-cart-id
+    //     // Беремо id кошика з атрибута data-cart-id
     //     var cartID = $(this).data("cart-id");
-    //     // Ищем ближайшеий input с количеством 
+    //     // Шукаємо найближчий input із кількістю
     //     var $input = $(this).closest('.input-group').find('.number');
-    //     // Берем значение количества товара
+    //     // Беремо значення кількості товару
     //     var currentValue = parseInt($input.val());
 
     //     $input.val(currentValue + 1);
 
-    //     // Запускаем функцию определенную ниже
-    //     // с аргументами (id карты, новое количество, количество уменьшилось или прибавилось, url)
+    //     // Запускаємо функцію визначену нижче
+    //     // із аргументами (id кошика, нова кількість, кількість зменшилась або збільшилась, url)
     //     updateCart(cartID, currentValue + 1, 1, url);
     // });
 
@@ -152,29 +152,29 @@ $(document).ready(function () {
     //             quantity: quantity,
     //             csrfmiddlewaretoken: $("[name=csrfmiddlewaretoken]").val(),
     //         },
- 
+
     //         success: function (data) {
-    //              // Сообщение
+    //              // Повідомлення
     //             successMessage.html(data.message);
     //             successMessage.fadeIn(400);
-    //              // Через 7сек убираем сообщение
+    //              // Через 7 сек прибираємо повідомлення
     //             setTimeout(function () {
     //                  successMessage.fadeOut(400);
     //             }, 7000);
- 
-    //             // Изменяем количество товаров в корзине
+
+    //             // Змінюємо кількість товарів у кошику
     //             var goodsInCartCount = $("#goods-in-cart-count");
     //             var cartCount = parseInt(goodsInCartCount.text() || 0);
     //             cartCount += change;
     //             goodsInCartCount.text(cartCount);
 
-    //             // Меняем содержимое корзины
+    //             // Змінюємо вміст кошика
     //             var cartItemsContainer = $("#cart-items-container");
     //             cartItemsContainer.html(data.cart_items_html);
 
     //         },
     //         error: function (data) {
-    //             console.log("Ошибка при добавлении товара в корзину");
+    //             console.log("Помилка при додаванні товару до кошика");
     //         },
     //     });
     // }
