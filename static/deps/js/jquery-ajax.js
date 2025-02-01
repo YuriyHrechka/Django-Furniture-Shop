@@ -52,53 +52,53 @@ $(document).ready(function () {
     });
 
 
-    // // Ловимо подію кліку по кнопці видалити товар з кошика
-    // $(document).on("click", ".remove-from-cart", function (e) {
-    //     // Блокуємо базову дію
-    //     e.preventDefault();
+    // Ловимо подію кліку по кнопці видалити товар з кошика
+    $(document).on("click", ".remove-from-cart", function (e) {
+        // Блокуємо базову дію
+        e.preventDefault();
 
-    //     // Беремо елемент лічильника в іконці кошика та отримуємо його значення
-    //     var goodsInCartCount = $("#goods-in-cart-count");
-    //     var cartCount = parseInt(goodsInCartCount.text() || 0);
+        // Беремо елемент лічильника в іконці кошика та отримуємо його значення
+        var goodsInCartCount = $("#goods-in-cart-count");
+        var cartCount = parseInt(goodsInCartCount.text() || 0);
 
-    //     // Отримуємо id кошика з атрибута data-cart-id
-    //     var cart_id = $(this).data("cart-id");
-    //     // З атрибута href беремо посилання на контролер django
-    //     var remove_from_cart = $(this).attr("href");
+        // Отримуємо id кошика з атрибута data-cart-id
+        var cart_id = $(this).data("cart-id");
+        // З атрибута href беремо посилання на контролер django
+        var remove_from_cart = $(this).attr("href");
 
-    //     // Робимо POST-запит через ajax без перезавантаження сторінки
-    //     $.ajax({
+        // Робимо POST-запит через ajax без перезавантаження сторінки
+        $.ajax({
 
-    //         type: "POST",
-    //         url: remove_from_cart,
-    //         data: {
-    //             cart_id: cart_id,
-    //             csrfmiddlewaretoken: $("[name=csrfmiddlewaretoken]").val(),
-    //         },
-    //         success: function (data) {
-    //             // Повідомлення
-    //             successMessage.html(data.message);
-    //             successMessage.fadeIn(400);
-    //              // Через 7 сек приховуємо повідомлення
-    //             setTimeout(function () {
-    //                 successMessage.fadeOut(400);
-    //             }, 7000);
+            type: "POST",
+            url: remove_from_cart,
+            data: {
+                cart_id: cart_id,
+                csrfmiddlewaretoken: $("[name=csrfmiddlewaretoken]").val(),
+            },
+            success: function (data) {
+                // Повідомлення
+                successMessage.html(data.message);
+                successMessage.fadeIn(400);
+                 // Через 7 сек приховуємо повідомлення
+                setTimeout(function () {
+                    successMessage.fadeOut(400);
+                }, 7000);
 
-    //             // Зменшуємо кількість товарів у кошику (відображення)
-    //             cartCount -= data.quantity_deleted;
-    //             goodsInCartCount.text(cartCount);
+                // Зменшуємо кількість товарів у кошику (відображення)
+                cartCount -= data.quantity_deleted;
+                goodsInCartCount.text(cartCount);
 
-    //             // Змінюємо вміст кошика на відповідь від django (новий відображений фрагмент розмітки кошика)
-    //             var cartItemsContainer = $("#cart-items-container");
-    //             cartItemsContainer.html(data.cart_items_html);
+                // Змінюємо вміст кошика на відповідь від django (новий відображений фрагмент розмітки кошика)
+                var cartItemsContainer = $("#cart-items-container");
+                cartItemsContainer.html(data.cart_items_html);
 
-    //         },
+            },
 
-    //         error: function (data) {
-    //             console.log("Помилка при додаванні товару до кошика");
-    //         },
-    //     });
-    // });
+            error: function (data) {
+                console.log("Помилка при додаванні товару до кошика");
+            },
+        });
+    });
 
 
     // // Тепер + - кількості товару
