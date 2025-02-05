@@ -53,4 +53,4 @@ class OrderItem(models.Model):
         return round(self.sell_price() * self.quantity, 2)
 
     def __str__(self):
-        return f"Товар"
+        return f"Товар {self.name} | Замовлення № {self.order.pk}"
