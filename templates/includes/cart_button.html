@@ -27,11 +27,6 @@
                     {% include 'carts/includes/included_cart.html' %}
                     <!-- Закінчилась розмітка кошика -->
                 </div>
-                {% if carts %}
-                    <a class="btn btn-dark" href="{% url 'orders:create_order' %}">
-                        Оформити замовлення
-                    </a>
-                {% endif %}
             </div>
         </div>
     </div>
