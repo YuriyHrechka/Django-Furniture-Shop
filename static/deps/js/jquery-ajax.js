@@ -79,7 +79,7 @@ $(document).ready(function () {
                 // Повідомлення
                 successMessage.html(data.message);
                 successMessage.fadeIn(400);
-                 // Через 7 сек приховуємо повідомлення
+                // Через 7 сек приховуємо повідомлення
                 setTimeout(function () {
                     successMessage.fadeOut(400);
                 }, 7000);
@@ -92,6 +92,10 @@ $(document).ready(function () {
                 var cartItemsContainer = $("#cart-items-container");
                 cartItemsContainer.html(data.cart_items_html);
 
+                // Перевіряємо, чи потрібно перенаправити на головну сторінку
+                if (data.redirect_to_home) {
+                    window.location.href = '/';
+                }
             },
 
             error: function (data) {
@@ -150,12 +154,12 @@ $(document).ready(function () {
             },
 
             success: function (data) {
-                 // Повідомлення
+                // Повідомлення
                 successMessage.html(data.message);
                 successMessage.fadeIn(400);
-                 // Через 7 сек приховуємо повідомлення
+                // Через 7 сек приховуємо повідомлення
                 setTimeout(function () {
-                     successMessage.fadeOut(400);
+                    successMessage.fadeOut(400);
                 }, 7000);
 
                 // Змінюєм кількість товарів в кошику
