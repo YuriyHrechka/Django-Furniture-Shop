@@ -1,3 +1,5 @@
+import re
+
 from django import forms
 
 
@@ -18,6 +20,16 @@ class CreateOrderForm(forms.Form):
             ('1', True),
         ],
     )
+
+    def clean_phone_number(self):
+        data = self.cleaned_data['phone_number']
+
+        pattern = re.compile(r'^(?:\+380|0)\d{9}$')
+
+        if not pattern.match(data):
+            raise forms.ValidationError('Не правильний формат номеру')
+
+        return data
 
     # first_name = forms.CharField(
     #     widget=forms.TextInput(
