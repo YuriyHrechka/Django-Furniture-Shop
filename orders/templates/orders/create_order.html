@@ -44,7 +44,7 @@
                                 <label for="id_phone_number" class="form-label">Номер телефону*:</label>
                                 <input type="text" class="form-control" id="id_phone_number" name="phone_number"
                                        value="{% if form.phone_number.value %}{{ form.phone_number.value }}{% endif %}"
-                                       placeholder="У форматі: XXX-XXX-XX-XX"
+                                       placeholder=""
                                        required>
                                 {% if form.phone_number.errors %}
                                 	<div class="alert alert-danger alert-dismissible fade show">{{ form.phone_number.errors }}</div>

@@ -46,11 +46,12 @@ class OrderItem(models.Model):
         db_table = 'order_item'
         verbose_name = 'Проданий товар'
         verbose_name_plural = 'Продані товари'
+        ordering = ('id',)
 
     objects = OrderitemQueryset.as_manager()
 
     def products_price(self):
-        return round(self.sell_price() * self.quantity, 2)
+        return round(self.product.sell_price() * self.quantity, 2)
 
     def __str__(self):
         return f"Товар {self.name} | Замовлення № {self.order.pk}"
