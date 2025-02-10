@@ -1,5 +1,7 @@
 from django import forms
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm, PasswordResetForm
+from prompt_toolkit.validation import ValidationError
+from django.utils.translation import gettext as _
 
 from users.models import User
 
@@ -48,6 +50,15 @@ class UserRegistrationForm(UserCreationForm):
     email = forms.CharField()
     password1 = forms.CharField()
     password2 = forms.CharField()
+
+
+class CustomPasswordResetForm(PasswordResetForm):
+    def clean(self):
+        cleaned_data = super().clean()
+        email = cleaned_data.get("email")
+        if email and not User.objects.filter(email=email).exists():
+            self.add_error('email', _('Користувача з такою електронною поштою не знайдено.'))
+        return cleaned_data
 
 
 class ProfileForm(UserChangeForm):
