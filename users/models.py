@@ -3,6 +3,7 @@ from django.db import models
 
 
 class User(AbstractUser):
+    email = models.EmailField(unique=True)
     image = models.ImageField(upload_to='users_images', blank=True, null=True, verbose_name='Аватар')
     phone_number = models.CharField(max_length=10, blank=True, null=True)
 
