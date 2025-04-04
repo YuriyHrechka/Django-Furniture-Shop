@@ -63,18 +63,15 @@ class UserRegistrationView(CreateView):
         user = form.save(commit=False)
 
         try:
+            user.session_auth = True
             user.save()
-            session_key = self.request.session.session_key
 
-            auth.login(self.request, user)
-
-            if session_key:
-                Cart.objects.filter(session_key=session_key).update(user=user)
-
+            auth.login(self.request, user, backend='django.contrib.auth.backends.ModelBackend')
             messages.success(self.request, f'{user.username}, Ви успішно зареєструвались та ввійшли в акаунт')
             return HttpResponseRedirect(self.success_url)
 
         except Exception as e:
+            print("Error:" + str(e))
             messages.error(self.request, 'Помилка під час реєстрації. Будь ласка, спробуйте ще раз.')
             return self.render_to_response(self.get_context_data(form=form))
 
@@ -86,8 +83,8 @@ class UserRegistrationView(CreateView):
 
 class CustomPasswordResetView(PasswordResetView):
     template_name = 'users/reset_password/forgot_password.html'
-    email_template_name = 'users/password_reset_email.html'
-    subject_template_name = 'users/password_reset_subject.txt'
+    email_template_name = 'users/reset_password/password_reset_email.html'
+    subject_template_name = 'users/reset_password/password_reset_subject.txt'
     success_url = reverse_lazy('users:password_reset_done')
     form_class = CustomPasswordResetForm
 

@@ -7,7 +7,7 @@ from users.models import User
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('username', 'first_name', 'last_name', 'email',)
-    search_fields = ('username', 'first_name', 'last_name', 'email',)
+    list_display = ('username', 'first_name', 'last_name', 'email', 'session_auth')
+    search_fields = ('username', 'first_name', 'last_name', 'email', 'session_auth')
 
     inlines = [CartTabAdmin, OrderTabularAdmin]

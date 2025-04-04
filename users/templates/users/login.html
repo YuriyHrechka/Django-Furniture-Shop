@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load socialaccount %}
 
 {% block modal_cart %}
 	{% include 'includes/cart_button.html' %}
@@ -48,7 +49,7 @@
 {#                            {{ form.password }}#}
 {#                        </div>#}
 
-                        <button type="submit" class="btn btn-dark btn-block">Войти</button>
+                        <button type="submit" class="btn btn-dark btn-block">Ввійти</button>
                     </form>
                     <div class="mt-3">
                         <a href="{% url 'users:password_reset' %}">Забули пароль?</a> | <a href="{% url 'user:registration' %}">Створити акаунт</a>
@@ -56,7 +57,7 @@
                     <hr>
                     <div class="text-center">
                         <p>Або авторизуйтесь через:</p>
-                        <a href="#" class="btn btn-dark">
+                        <a href="{% provider_login_url 'google' %}?next=/" class="btn btn-dark">
                             <img class="mx-1" src="{% static 'deps/icons/google.svg' %}" alt="Catalog Icon" width="16" height="16">
                             Google
                         </a>

@@ -1,2 +1,42 @@
-Django==4.2.17
+asgiref==3.8.1
+asttokens==3.0.0
+certifi==2025.1.31
+cffi==1.17.1
+charset-normalizer==3.4.1
+cryptography==44.0.2
+decorator==5.1.1
+Django==5.2
+django-allauth==65.7.0
+django-debug-toolbar==4.4.6
+dotenv==0.9.9
+executing==2.1.0
+git-filter-repo==2.47.0
+idna==3.10
+ipython==8.31.0
+jedi==0.19.2
+jwt==1.3.1
+matplotlib-inline==0.1.7
+parso==0.8.4
+pexpect==4.9.0
+pillow==11.1.0
+prompt_toolkit==3.0.50
+psycopg2-binary==2.9.10
+ptyprocess==0.7.0
+pure_eval==0.2.3
+pycairo @ file:///private/tmp/py3cairo-20231022-6959-nbqbp3/pycairo-1.25.1
+pycparser==2.22
+Pygments==2.19.1
+PyGObject==3.46.0
+PyJWT==2.10.1
+python-decouple==3.8
+python-dotenv==1.1.0
 python-slugify==8.0.4
+requests==2.32.3
+setuptools @ file:///private/tmp/python-setuptools-20231004-5455-1tvazfw/setuptools-68.2.2
+sqlparse==0.5.3
+stack-data==0.6.3
+text-unidecode==1.3
+traitlets==5.14.3
+urllib3==2.3.0
+wcwidth==0.2.13
+wheel @ file:///usr/local/Cellar/python%403.12/3.12.0/libexec/wheel-0.41.2-py3-none-any.whl#sha256=78d96cd4af1dba478ba60defeb048271977eec315912b78273611989471ec2f6
